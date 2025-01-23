@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Times New Roman, serif;
     margin: 0;
     padding: 0;
     background-color: #bb153d;
@@ -10,8 +10,8 @@ header {
     background-color: #7d0c36;
     padding: 20px;
     color: white;
-    font-family: Arial, sans-serif;
-    font-size: 32px;
+    font-family: Times New Roman, serif;
+    font-size: 42px;
     text-align: center;
     animation: slideDown 2s ease-in-out forwards; /* Add forwards */
 }
@@ -68,13 +68,93 @@ section img {
     height: auto;
     border-radius: 8px;
 }
+#executives {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+#executives h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.executive-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.executive-member {
+    width: 200px;
+    text-align: center;
+}
+
+.executive-member img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.executive-member p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+#contact {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    padding-bottom: 50px;  /* Add extra padding at the bottom */
+}
 
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
+    position: relative;  /* Change fixed to relative */
     width: 100%;
-    bottom: 0;
+    margin-top: 20px; /* Add a margin to avoid overlapping */
+}
+
+/* Default state for h2 (off-screen to the right) */
+h2 {
+    opacity: 0;
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 1.5s ease-out, opacity 1s ease-out;
+ /* Smoother and slower animation */
+}
+
+/* When h2 is in view, apply this class */
+h2.animate {
+    opacity: 1;
+    transform: translateX(0); /* Slide into place */
+}
+/* Default state for <p> (off-screen below) */
+p {
+    opacity: 0;
+    transform: translateY(100%); /* Start off-screen below */
+    transition: transform 1.5s ease-out, opacity 1s ease-out; /* Smooth animation */
+}
+
+/* When <p> is in view, apply this class */
+p.animate {
+    opacity: 1;
+    transform: translateY(0); /* Move to its original position */
+}
+.executive-member {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.executive-member.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
