@@ -8,8 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Hermanos Football & Charity Club</h1>
-
+        <h1>Welcome to Hermanos</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -22,7 +21,7 @@
 
     <section id="home">
         <h2>Our Mission</h2>
-        <p>We are a community-driven football and charity club dedicated to making a positive impact!</p>
+        <p>We are a community-driven football and charity club dedicated to making a positive impact!,Strengthen young people's talents, skills and abilities. Organize regular football playing, football coaching and training sessions. Help gain entry into target communities and build up trust. Provision of positive role models for young people and families.</p>
         <img src="Images/img.png" alt="Hermanos Club">
         <img src="Images/img_1.png" alt="Hermanos Club">
         <img src="Images/KM.png" alt="Hermanos Club">
@@ -31,25 +30,102 @@
 
     <section id="about">
         <h2>About Us</h2>
-        <p>Founded with a passion for football and helping others, Hermanos strives to bring people together through sports and charity events.</p>
+        <p>Founded with a passion for football and helping others, Hermanos strives to bring people together through sports and charity events. Also we have investment plans and Startup business. we are here since 2016. we have launched our football club in 2017 and names ad ChunkzFC later on we renamed its to FCHermanos. we have achieved many trophies and medals in football and other athletics and games. we are helped many people by financially and also by physically. and we ready to take all type of challenges. we have a greate track record in facing challenges and solving problems. we are adoptable for anyone and also flexible for any activities. we have Engineers, Data analytics, hardware and software mechanics, Travel Partners,Medical assistants, Sales and Marketing teams, Drivers, Electrician and Plumbers,AC Mechanics, Ecommerce Managements, So on.. and also we have representative from, UAE,Saudi Arabia,Kuwait,Bahrain,Thailand,Qatar,New Delhi.we are here for you..</p>
+
     </section>
+    <section id="executives">
+    <h2>Meet Our Executives</h2>
+    <div class="executive-container">
+        <div class="executive-member">
+            <img src="Images/Kurup.jpeg" alt="Executive Member 1">
+            <p><strong>Muhammed Fasil AP</strong><br>Manager</p>
+        </div>
+        <div class="executive-member">
+            <img src="Images/Suhail.jpeg" alt="Executive Member 2">
+            <p><strong>Suhail AP</strong><br>President</p>
+        </div>
+        <div class="executive-member">
+            <img src="Images/Adham.jpeg" alt="Executive Member 3">
+            <p><strong>Adham Parankimathottam</strong><br>General secretary</p>
+        </div>
+        <!-- Add more members here -->
+    </div>
+</section>
+
 
     <section id="teams">
         <h2>Teams & Events</h2>
-        <p>Stay updated with our upcoming matches and charity events!</p>
+        <p>Stay updated with our upcoming matches and charity events!, How users can register for an account, just mail to us by Contact us,user must have responsible works & they need to agree the privacy policies.!!</p>
         <!-- You can add event details and a calendar here -->
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-            <input type="submit" value="Send">
-        </form>
-    </section>
+   <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="submit_contact.php" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="message">How we can help you:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" placeholder="Please inform us here..." required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</section>
+    <script>
+    // Function to check if an element is in the viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+    }
+
+    // Add an event listener for scroll
+    window.addEventListener('scroll', () => {
+        const headings = document.querySelectorAll('h2'); // Select all h2 elements
+        headings.forEach(h2 => {
+            if (isInViewport(h2)) {
+                h2.classList.add('animate'); // Add the animate class when in view
+            }
+        });
+    });
+</script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const pElements = document.querySelectorAll("p");
+
+        // Create an Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate");
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% of the element is in view
+
+        // Observe all <p> elements
+        pElements.forEach((p) => observer.observe(p));
+    });
+</script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const executiveMembers = document.querySelectorAll(".executive-member");
+
+        // Create an Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate");
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% of the element is in view
+
+        // Observe all executive members
+        executiveMembers.forEach((member) => observer.observe(member));
+    });
+</script>
+
 
     <footer>
         <p>© 2025 Hermanos Football & Charity Club</p>
